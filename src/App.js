@@ -2,32 +2,28 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AboutSection from "./components/AboutSection";
 import ProductandServices from "./components/ProductandServices";
+import Description from "./components/descripton";
 
 export default function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <Link to="/" style={{ marginInlineStart: "8px" }}>
-            Home
-          </Link>
-          <Link to="/about" style={{ marginInlineStart: "8px" }}>
-            About
-          </Link>
-          <Link to="/services" style={{ marginInlineStart: "8px" }}>
-            Services
-          </Link>
-        </nav>
-        <Switch>
-          <Route path="/about">
-            <AboutSection />
-          </Route>
-          <Route path="/services">
-            <ProductandServices />
-          </Route>
-          <Route path="/"></Route>
-        </Switch>
-      </div>
+      <nav>
+        <Link to="/" style={{ marginInlineStart: "8px" }}>
+          Home
+        </Link>
+        <Link to="/About" style={{ marginInlineStart: "8px" }}>
+          About
+        </Link>
+        <Link to="/services" style={{ marginInlineStart: "8px" }}>
+          Services
+        </Link>
+      </nav>
+      <Switch>
+        <Route path="/About" exact component={AboutSection}></Route>
+        <Route path="/services" exact component={ProductandServices}></Route>
+        <Route path="services/:id" exact component={Description}></Route>
+        <Route path="/"></Route>
+      </Switch>
     </Router>
   );
 }
