@@ -1,7 +1,7 @@
 import React from "react";
 import fiverr from "./fiverr.png";
 
-const AboutSection = () => {
+function AboutSection() {
   return (
     <div>
       <img src={fiverr}></img>
@@ -26,6 +26,6 @@ const AboutSection = () => {
       </p1>
     </div>
   );
-};
+}
 
 export default AboutSection;
